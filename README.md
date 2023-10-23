@@ -10,3 +10,4 @@ Container image available at
 * NRG Ljubljana
 * Hubbard I
 * Hartree Fock
+* W2dynamics

@@ -137,6 +137,15 @@ RUN git clone https://github.com/TRIQS/hartree_fock hartree_fock.src && \
     rm -rf /tmp/hartree_fock.src /tmp/hartree_fock.build
 
 ######################### END OF TRIQS HubbardI & Hartree Fock ######################### 
+######################### TRIQS w2dynamics ######################### 
+
+RUN git clone https://github.com/TRIQS/w2dynamics_interface w2dynamics_interface.src && \
+    mkdir w2dynamics_interface.build && cd w2dynamics_interface.build && \
+    cmake ../w2dynamics_interface.src -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX && \
+    make  && make install && \
+    rm -rf /tmp/w2dynamics_interface.src /tmp/w2dynamics_interface.build
+
+######################### END OF TRIQS w2dynamics ######################### 
 
 
 ARG NB_USER=triqs
@@ -152,6 +161,7 @@ RUN git clone --depth 1 https://github.com/pomerol-ed/pomerol2triqs.git
 RUN git clone --depth 1 https://github.com/TRIQS/nrgljubljana_interface
 RUN git clone --depth 1 https://github.com/TRIQS/hubbardI
 RUN git clone --depth 1 https://github.com/TRIQS/hartree_fock
+RUN git clone --depth 1 https://github.com/TRIQS/w2dynamics_interface
 
 WORKDIR /home/$NB_USER
 EXPOSE 8888
