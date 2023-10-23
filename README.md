@@ -8,3 +8,5 @@ Container image available at
 * CTHYB
 * Pomerol
 * NRG Ljubljana
+* Hubbard I
+* Hartree Fock

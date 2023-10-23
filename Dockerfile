@@ -122,6 +122,21 @@ RUN git clone https://github.com/TRIQS/nrgljubljana_interface nrgljubljana_inter
     rm -rf /tmp/nrgljubljana_interface.src /tmp/nrgljubljana_interface.build
 
 ######################### END OF TRIQS NRG ######################### 
+######################### TRIQS HubbardI & Hartree Fock ######################### 
+
+RUN git clone https://github.com/TRIQS/hubbardI hubbardI.src && \
+    mkdir hubbardI.build && cd hubbardI.build && \
+    cmake ../hubbardI.src -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX && \
+    make  && make install && \
+    rm -rf /tmp/hubbardI.src /tmp/hubbardI.build
+
+RUN git clone https://github.com/TRIQS/hartree_fock hartree_fock.src && \
+    mkdir hartree_fock.build && cd hartree_fock.build && \
+    cmake ../hartree_fock.src -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX && \
+    make  && make install && \
+    rm -rf /tmp/hartree_fock.src /tmp/hartree_fock.build
+
+######################### END OF TRIQS HubbardI & Hartree Fock ######################### 
 
 
 ARG NB_USER=triqs
@@ -135,6 +150,8 @@ RUN curl -L https://api.github.com/repos/TRIQS/tutorials/tarball/unstable | tar 
 RUN git clone --depth 1 https://github.com/pomerol-ed/pomerol.git
 RUN git clone --depth 1 https://github.com/pomerol-ed/pomerol2triqs.git
 RUN git clone --depth 1 https://github.com/TRIQS/nrgljubljana_interface
+RUN git clone --depth 1 https://github.com/TRIQS/hubbardI
+RUN git clone --depth 1 https://github.com/TRIQS/hartree_fock
 
 WORKDIR /home/$NB_USER
 EXPOSE 8888
