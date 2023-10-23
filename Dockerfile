@@ -18,7 +18,8 @@ RUN apt-get update && \
       python3-pip \
       python3-setuptools \
       sudo \
-      libeigen3-dev && \
+      libucx-dev ucx-utils \
+      libeigen3-dev \
       libgsl-dev \
       && \
     apt-get autoremove --purge -y && \
