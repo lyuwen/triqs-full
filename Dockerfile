@@ -95,7 +95,6 @@ RUN mkdir -p $POMEROL_INSTALL_PREFIX
 RUN mkdir -p $POMEROL2TRIQS_INSTALL_PREFIX
 
 RUN git clone --depth 1 https://github.com/pomerol-ed/pomerol.git /tmp/pomerol.src && \
-    sed -i '1s/^/string(REPLACE " " ";" MPI_CXX_COMPILE_FLAGS ${MPI_CXX_COMPILE_FLAGS})\n/' /tmp/pomerol.src/src/CMakeLists.txt && \
     mkdir -p /tmp/pomerol.build && cd /tmp/pomerol.build && \
     cmake /tmp/pomerol.src -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=$POMEROL_INSTALL_PREFIX -DTESTS=OFF && \
