@@ -11,3 +11,23 @@ Container image available at
 * Hubbard I
 * Hartree Fock
 * W2dynamics
+
+## Usage
+
+* Use within docker
+    ```bash
+    docker run -ti --rm -v $PWD:/work --workdir /work fulvwen/triqs-full:gcc-mpich python3 script.py
+    ```
+
+* Use with Singularity
+    ```bash
+    singularity build triqs-full-gcc-mpich.sif docker://triqs-full:gcc-mpich
+    ```
+    1. use singularity interactively
+        ```bash
+        singularity shell --bind /home triqs-full-gcc-mpich.sif
+        ```
+    2. execute command directly with singularity
+        ```bash
+        mpirun -n 4 singularity exec --bind /home triqs-full-gcc-mpich.sif python3 script.py
+        ```
