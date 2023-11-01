@@ -89,7 +89,7 @@ jobs:
         with:
           username: ${{ env.DOCKER_USER }}
           password: ${{ secrets.DOCKER_TOKEN }}
-          repository: ${{ github.repository }}
+          repository: ${{ env.DOCKER_USER }}/${{ env.IMAGE_NAME }}
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
