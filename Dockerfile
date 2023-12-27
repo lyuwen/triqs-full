@@ -34,6 +34,7 @@ RUN pip install --no-cache-dir jupyter mpi4py 'jupyter-client>8.5.0'
 ENV CXX=g++-12
 ENV CC=gcc-12
 ENV INSTALL_PREFIX=/opt/triqs
+ENV PERL_BADLANG=0
 
 RUN mkdir -p $INSTALL_PREFIX
 
