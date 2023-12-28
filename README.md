@@ -21,7 +21,7 @@ Container image available at
 
 * Use with Singularity
     ```bash
-    singularity build triqs-full-gcc-mpich.sif docker://triqs-full:gcc-mpich
+    singularity build triqs-full-gcc-mpich.sif docker://fulvwen/triqs-full:gcc-mpich
     ```
     1. use singularity interactively
         ```bash
